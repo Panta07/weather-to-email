@@ -1,0 +1,3 @@
+config = {
+     'bootstrap.servers': 'localhost:9091,localhost:9092,localhost:9093'
+}
