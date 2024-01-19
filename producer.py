@@ -7,7 +7,7 @@ from retry_requests import retry
 from confluent_kafka import Producer
 from config import config
 
-config['client.id'] = 'weather-producer'
+# config['client.id'] = 'weather-producer'
 producer = Producer(config)
 topic_name = 'weater_to_email_topic'
 
@@ -88,5 +88,4 @@ def delivery_report(err, msg):
 
 producer.produce(topic_name, value=json_data, callback=delivery_report)
 
-# Čekanje da se sve poruke potvrde pre zatvaranja producenta
 producer.flush()
